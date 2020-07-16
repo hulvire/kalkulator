@@ -21,6 +21,10 @@
                         <a href="{{ URL::to('katalog') }}">Katalóg</a>
                         |
                         <a href="{{ URL::to('letak') }}">Leták</a>
+                        |
+                        <a href="{{ URL::to('zakazky') }}">Zákazky</a>
+                        |
+                        <a href="{{ URL::to('zoznam') }}">Zoznam</a>
                    </div>
                     
                     <hr />

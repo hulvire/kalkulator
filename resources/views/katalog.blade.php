@@ -21,6 +21,10 @@
                         <a href="{{ URL::to('kalkulacie') }}">Klakulácie</a>
                         |
                         <a href="{{ URL::to('letak') }}">Leták</a>
+                        |
+                        <a href="{{ URL::to('zakazky') }}">Zákazky</a>
+                        |
+                        <a href="{{ URL::to('zoznam') }}">Zoznam</a>
                    </div>
                     
                     <hr />

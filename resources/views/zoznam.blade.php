@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Sluzby</div>
+                <div class="card-header">Zoznam</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,6 +15,8 @@
                     @endif
                     <div class="links">
                         <a href="{{ URL::to('home') }}">Home</a>
+                        |
+                        <a href="{{ URL::to('sluzby') }}">Služby</a>
                         |
                         <a href="{{ URL::to('kalkulacie') }}">Klakulácie</a>
                         |
@@ -28,30 +30,34 @@
                    </div>
                     
                     <hr />
-                    <table>
-                    <tr>
-                    <th>meno</th>
-                    <th>popis</th>
-                    <th>kategory</th>
-                    <th>service_type</th>
-                    <th>service_param</th>
-                    <th>pricetype</th>
-                    <th>sort_order</th>
-                    <th>boolenabled</th>
-                    </tr>
-                    @foreach($sluzby as $sluzba)
-                    <tr>
-                    <td>{{ $sluzba -> str_service_name }}</td>
-                    <td>{{ $sluzba -> str_service_desc }}</td>
-                    <td>{{ $sluzba -> int_service_category_id }}</td>
-                    <td>{{ $sluzba -> int_service_type }}</td>
-                    <td>{{ $sluzba -> int_service_param }}</td>
-                    <td>{{ $sluzba -> int_service_price_type }}</td>
-                    <td>{{ $sluzba -> int_service_sort_order }}</td>
-                    <td>{{ $sluzba -> bool_enabled }}</td>
-                    </tr>
-                    @endforeach
-                    </table>
+
+
+
+                    <h3>Zoznam typov papiera</h3>
+                   <table>
+                   <tr>
+                   <th>id</th>
+                    <th>str_paper_name</th>
+                    <th>byte_paper_price_type</th>
+                    <th>int_paper_format_id</th>
+                    <th>int_paper_price</th>
+                    <th>bool_active</th>
+                   </tr>
+                   @foreach($papers as $paper)
+                   <tr>
+                   <td>{{ $paper -> id }}</td>
+                   <td>{{ $paper -> str_paper_name }}</td>
+                    <td>{{ $paper -> byte_paper_price_type }}</td>
+                    <td>{{ $paper -> int_paper_format_id }}</td>
+                    <td>{{ $paper -> int_paper_price }}</td>
+                    <td>{{ $paper -> bool_active }}</td>
+                   </tr>
+                   @endforeach
+                   </table>
+<hr />
+
+
+
                     <hr />
 
                     <a href="{{ URL::to('logout') }}">Logout</a>

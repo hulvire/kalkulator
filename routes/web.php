@@ -27,12 +27,15 @@ Route::get('/kalkulacie', 'KalkulacieController@index')->name('kalkulacie');
 Route::get('/katalog', 'KatalogController@index')->name('katalog');
 Route::get('/letak', 'LetakController@index')->name('letak');
 
-Route::get('/import', 'ImportController@index')->name('import');
+Route::get('/zakazky', 'ZakazkyController@index')->name('zakazky');
+
+Route::get('/zoznam', 'ZoznamController@index')->name('zoznam');
 
 
 Route::get('logout', array('uses' => 'HomeController@doLogout'));
 
 
+Route::get('/import', 'ImportController@index')->name('import');
 
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
